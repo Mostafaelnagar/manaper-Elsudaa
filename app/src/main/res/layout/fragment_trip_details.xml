@@ -1,0 +1,1339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="tripDetailsViewModels"
+            type="app.manaper.viewModels.TripDetailsViewModels" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".view.company.TripDetailsFragment">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_horizontal"
+                    android:minHeight="?attr/actionBarSize"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/tripDetailsText"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorWhite" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                             android:onClick="@{() -> tripDetailsViewModels.back()}"
+                            android:src="@drawable/ic_back" />
+                    </RelativeLayout>
+
+
+                </androidx.appcompat.widget.Toolbar>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tool_bar"
+                    android:background="?attr/colorPrimary"
+                    android:minHeight="?attr/actionBarSize"
+                     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    app:tabIndicatorColor="@android:color/white"
+                    app:tabTextAppearance="@style/TabTextAppearance" />
+
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:clickable="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/linArrival"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/AirLinesText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.arrivalRequest.tripArrDepsAirlines}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/AirPortText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.arrivalRequest.tripArrDepsAirport}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/tripNumberText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.arrivalRequest.tripArrDepsTripnumber}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/dateText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.arrivalRequest.tripArrDepsDate}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/timeText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.arrivalRequest.tripArrDepsTime}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/personsText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.arrivalRequest.tripArrDepsPersons}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/superVisorText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.arrivalRequest.tripArrDepsSupervisor}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/phoneNumberText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.arrivalRequest.tripArrDepsPhonenumber}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linFirstCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/MadinhaHotelText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.firstCityRequest.tripFirSecsHotel}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/FromText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.firstCityRequest.tripFirSecsFrom}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/toDateText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.firstCityRequest.tripFirSecsTo}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/nightsText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.firstCityRequest.tripFirSecsNights}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/descriptionText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.firstCityRequest.tripFirSecsDesc}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/manaperTransportText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/frtrans"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.firstCityRequest.tripFirSecsTransport}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/attractivePlacesText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/places"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:hint="@{tripDetailsViewModels.showPlacesHint}"
+                                    android:onClick="@{() -> tripDetailsViewModels.showPlaces()}"
+                                    android:text="@={tripDetailsViewModels.places}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/attractiveDateText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/fDate1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:hint="@{tripDetailsViewModels.attractiveDateHint}"
+                                    android:text="@={tripDetailsViewModels.date}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/attractiveTimeText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/fTime1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:hint="@{tripDetailsViewModels.attractiveTimeHint}"
+                                    android:text="@={tripDetailsViewModels.time}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linSecondCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/makkahHotelText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.secondCityRequest.tripFirSecsHotel}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/FromText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.secondCityRequest.tripFirSecsFrom}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/toDateText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.secondCityRequest.tripFirSecsTo}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/nightsText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.secondCityRequest.tripFirSecsNights}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/descriptionText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.secondCityRequest.tripFirSecsDesc}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/manaperTransportText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/sectrans"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.secondCityRequest.tripFirSecsTransport}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/attractivePlacesText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/places2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:hint="@{tripDetailsViewModels.showPlacesHint}"
+                                    android:onClick="@{() -> tripDetailsViewModels.showPlaces()}"
+                                    android:text="@={tripDetailsViewModels.places}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/attractiveDateText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/fDate2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:hint="@{tripDetailsViewModels.attractiveDateHint}"
+                                    android:text="@={tripDetailsViewModels.date}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/attractiveTimeText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/fTime2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:hint="@{tripDetailsViewModels.attractiveTimeHint}"
+                                    android:text="@={tripDetailsViewModels.time}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linOutLeaving"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/AirLinesText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.departureRequest.tripArrDepsAirlines}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/AirPortText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.departureRequest.tripArrDepsAirport}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/tripNumberText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.departureRequest.tripArrDepsTripnumber}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/dateText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.departureRequest.tripArrDepsDate}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp8h"
+                            app:cardCornerRadius="@dimen/dp8h"
+                            app:cardElevation="@dimen/dp4h">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp8h"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp4h"
+
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight=".8"
+                                    android:gravity="start"
+                                    android:text="@string/timeText"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp2h"
+                                    android:layout_weight="1.2"
+                                    android:gravity="center_horizontal"
+                                    android:text="@={tripDetailsViewModels.departureRequest.tripArrDepsTime}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp16h"
+                        android:background="@drawable/corner_view"
+                        android:onClick="@{() -> tripDetailsViewModels.getPdf()}"
+                        android:text="@string/btnShareText"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+            </ScrollView>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </RelativeLayout>
+</layout>

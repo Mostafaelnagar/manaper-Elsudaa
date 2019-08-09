@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/menu_home" />
+    <item
+        android:id="@+id/navLastTrip"
+        android:icon="@drawable/ic_last_trip"
+        android:title="@string/menuLastTrip" />
+    <item
+        android:id="@+id/navAddTrip"
+        android:icon="@drawable/ic_add_trip"
+        android:title="@string/menuAddTrip" />
+    <item
+        android:id="@+id/navUrgentTrip"
+        android:icon="@drawable/ic_last_trip"
+        android:title="@string/menuUrgetTrip" />
+    <item
+        android:id="@+id/navMyTrips"
+        android:icon="@drawable/ic_add_trip"
+        android:title="@string/menuMyTrips" />
+    <item
+        android:id="@+id/navNotifications"
+        android:icon="@drawable/ic_notifications"
+        android:title="@string/menuNotfication" />
+
+    <item
+        android:id="@+id/navVideo"
+        android:icon="@drawable/ic_video"
+        android:title="@string/menuVideo" />
+    <item
+        android:id="@+id/navSuggestion"
+        android:icon="@drawable/ic_suggestion"
+        android:title="@string/menuSuggestion" />
+    <item
+        android:id="@+id/navContactUs"
+        android:icon="@drawable/ic_contact"
+        android:title="@string/menuContact" />
+    <item
+        android:id="@+id/navAbout"
+        android:icon="@drawable/ic_about"
+        android:title="@string/menuAbout" />
+    <item
+        android:id="@+id/navSignOut"
+        android:icon="@drawable/ic_sign_out"
+        android:title="@string/menuLogOut" />
+</menu>

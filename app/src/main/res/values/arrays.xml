@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="usersType">
+        <item>@string/select_Type</item>
+        <item>@string/company_Type</item>
+        <item>@string/delegate_Type</item>
+    </string-array>
+    <string-array name="transportation">
+        <item>@string/manaper</item>
+        <item>@string/other</item>
+    </string-array>
+</resources>

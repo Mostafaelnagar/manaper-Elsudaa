@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="addTripsViewModel"
+            type="app.manaper.viewModels.AddTripsViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp8h"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12h"
+                android:layout_marginStart="@dimen/dp12h"
+                android:layout_marginTop="@dimen/dp8h"
+                android:text="@string/infoText"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12h"
+                android:layout_marginStart="@dimen/dp12h"
+                android:layout_marginTop="@dimen/dp8h"
+                android:background="@drawable/rounded_shape"
+                android:hint="@string/AirLinesText"
+                android:inputType="text"
+                android:padding="@dimen/dp8h"
+                android:text="@={addTripsViewModel.addArrivalrequest.tripArrDepsAirlines}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black" />
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12h"
+                android:layout_marginStart="@dimen/dp12h"
+                android:layout_marginTop="@dimen/dp8h"
+                android:background="@drawable/rounded_shape"
+                android:hint="@string/AirPortText"
+                android:inputType="text"
+                android:padding="@dimen/dp8h"
+                android:text="@={addTripsViewModel.addArrivalrequest.tripArrDepsAirport}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12h"
+                android:layout_marginStart="@dimen/dp12h"
+                android:layout_marginTop="@dimen/dp8h"
+                android:background="@drawable/rounded_shape"
+                android:hint="@string/tripNumberText"
+                android:inputType="text"
+                android:padding="@dimen/dp8h"
+
+                android:text="@={addTripsViewModel.addArrivalrequest.tripArrDepsTripnumber}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/ed_Cities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12h"
+                android:layout_marginStart="@dimen/dp12h"
+                android:layout_marginTop="@dimen/dp8h"
+                android:background="@drawable/rounded_shape"
+                android:focusable="false"
+                android:hint="@string/label_cities"
+                android:onClick="@{() -> addTripsViewModel.showCities()}"
+                android:padding="@dimen/dp8h"
+                android:text="@={addTripsViewModel.city}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12h"
+                android:layout_marginStart="@dimen/dp12h"
+                android:layout_marginTop="@dimen/dp8h"
+                android:background="@drawable/rounded_shape"
+                android:hint="@string/personsText"
+                android:inputType="number"
+                android:padding="@dimen/dp8h"
+                android:text="@={addTripsViewModel.addArrivalrequest.tripArrDepsPersons}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12h"
+                android:layout_marginStart="@dimen/dp12h"
+                android:layout_marginTop="@dimen/dp8h"
+                android:background="@drawable/rounded_shape"
+                android:focusable="false"
+                android:hint="@string/dateText"
+                android:onClick="@{()->addTripsViewModel.onToClick()}"
+                android:padding="@dimen/dp8h"
+                android:text="@{addTripsViewModel.addArrivalrequest.tripArrDepsDate}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black" />
+
+            <app.manaper.base.TimeEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp12h"
+                android:layout_marginStart="@dimen/dp12h"
+                android:layout_marginTop="@dimen/dp8h"
+                android:background="@drawable/rounded_shape"
+                android:focusable="false"
+                android:hint="@string/timeText"
+                android:padding="@dimen/dp8h"
+                android:text="@={addTripsViewModel.addArrivalrequest.tripArrDepsTime}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp16h"
+                android:background="@drawable/corner_view"
+                android:onClick="@{() -> addTripsViewModel.addThirdTrip()}"
+                android:text="@string/btnFinishText"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

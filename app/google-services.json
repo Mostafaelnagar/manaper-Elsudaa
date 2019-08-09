@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "622890337434",
+    "firebase_url": "https://mnaber-11f5c.firebaseio.com",
+    "project_id": "mnaber-11f5c",
+    "storage_bucket": "mnaber-11f5c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622890337434:android:a07da96679309397",
+        "android_client_info": {
+          "package_name": "app.manaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622890337434-h8qiqalpqherkggnood5dvd7p00goa6i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.manaper",
+            "certificate_hash": "0e5ade517c0af49a49d32cae6638e2c6cf4b7d3f"
+          }
+        },
+        {
+          "client_id": "622890337434-5qf84gg5ugoq1ibavr6q7rt3ms6olebb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_6F8iz8PUpbCF76TJS6sAUtStaVTmz5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622890337434-5qf84gg5ugoq1ibavr6q7rt3ms6olebb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

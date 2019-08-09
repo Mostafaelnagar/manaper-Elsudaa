@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.mandop.MandopTodayTripsFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recMandopToday"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/mandop_today_trips_item"
+        android:layoutAnimation="@anim/layout_animation_fall_down"/>
+
+</LinearLayout>

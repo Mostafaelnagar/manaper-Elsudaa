@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vavViewModel"
+            type="app.manaper.customViews.NavViewModel" />
+    </data>
+    <!--MAIN_DRAWER-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/customDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/container_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/customToolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="?attr/colorPrimary"
+                        android:gravity="center_horizontal"
+                        android:minHeight="?attr/actionBarSize"
+                        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                        <TextView
+                            android:id="@+id/toolbarTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/menu_home"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorWhite" />
+                    </androidx.appcompat.widget.Toolbar>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_home_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorWhite" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/side_menu"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/userProfileImgae"
+                        android:layout_width="@dimen/dp65w"
+                        android:layout_height="@dimen/dp65h"
+                        android:layout_marginStart="@dimen/dp12w"
+                        android:layout_marginTop="@dimen/dp12h"
+                        android:onClick="@{() -> vavViewModel.toProfile()}"
+                        android:src="@drawable/man"
+                        app:imageUrl="@{vavViewModel.userImage}" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp8w"
+                        android:layout_marginStart="@dimen/dp8w"
+                        android:layout_marginTop="@dimen/dp12h"
+                        android:clickable="true"
+                        android:text="@={vavViewModel.userName}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp8w"
+                        android:layout_marginEnd="@dimen/dp8w"
+                        android:layout_marginStart="@dimen/dp8w"
+                        android:layout_marginTop="@dimen/dp12h"
+                        android:clickable="true"
+                        android:text="@={vavViewModel.userEmail}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recNavItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/grandLogo"
+                    android:layout_below="@+id/linHeader"
+                    app:navAdapter="@{vavViewModel.navAdapter}"
+                    app:navItems="@{vavViewModel.navItems}" />
+
+                <ImageView
+                    android:id="@+id/grandLogo"
+                    android:layout_width="@dimen/dp50w"
+                    android:layout_height="@dimen/dp50h"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/dp8w"
+                    android:onClick="@{() -> vavViewModel.grandInfo()}"
+                    android:src="@drawable/grand_logo" />
+            </RelativeLayout>
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+    </RelativeLayout>
+</layout>

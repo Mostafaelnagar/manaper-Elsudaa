@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="notificationsViewModel"
+            type="app.manaper.viewModels.NotificationsViewModels" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp8h"
+            android:gravity="center_horizontal"
+            android:text="@string/emptyList"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:visibility="@{notificationsViewModel.emptyList,default=gone}" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:notificationsAdapter="@{notificationsViewModel.notificationsAdapter}" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="notificationsItemViewModels"
+            type="app.manaper.viewModels.NotificationsItemViewModels" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp8h"
+        app:cardCornerRadius="@dimen/dp8h"
+        app:cardElevation="@dimen/dp4h">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp4w"
+                android:gravity="end"
+                android:paddingEnd="@dimen/dp4h"
+                android:paddingStart="@dimen/dp4h"
+                android:text="@={notificationsItemViewModels.notifications.notificationsTime}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp50w"
+                    android:layout_height="@dimen/dp50h"
+                    android:src="@drawable/manaper_logo"
+                    app:notificationsImageUrl="@{notificationsItemViewModels.notifications.notificationsImg}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp4w"
+                    android:layout_marginStart="@dimen/dp4w"
+                    android:maxLines="3"
+                    android:text="@={notificationsItemViewModels.notifications.notificationsDesc}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

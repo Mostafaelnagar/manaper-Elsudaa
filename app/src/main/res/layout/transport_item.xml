@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_marginStart="@dimen/dp12h"
+        android:layout_marginTop="@dimen/dp8h"
+        android:layout_marginEnd="@dimen/dp12h"
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp12h"
+        android:layout_marginTop="@dimen/dp8h"
+        android:layout_marginEnd="@dimen/dp12h"
+        android:background="@drawable/rounded_shape"
+        android:hint="@string/dateText"
+        android:padding="@dimen/dp8h"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/black"
+         />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp12h"
+        android:layout_marginTop="@dimen/dp8h"
+        android:layout_marginEnd="@dimen/dp12h"
+        android:background="@drawable/rounded_shape"
+        android:hint="@string/timeText"
+        android:padding="@dimen/dp8h"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/black"
+         />
+
+</LinearLayout>
